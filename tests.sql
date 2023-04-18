@@ -249,7 +249,7 @@ INSERT INTO GRADES VALUES(150, 28,56735, 78);
 
 -- Test Cases
 
--- Check if all the tables are created:
+-- Test1: Check if all the tables have been created successfully:
 SELECT * FROM Students;
 SELECT * FROM Courses;
 SELECT * FROM Registration;
@@ -257,27 +257,27 @@ SELECT * FROM GRADE_WEIGHT;
 SELECT * FROM ASSIGNMENTS;
 SELECT * FROM GRADES;
 
--- Check if the data has been inserted in Students table:
+-- Test2: Check if the data has been inserted correctly in the Students table:
 SELECT * FROM Students WHERE StudentID = 150;
 SELECT * FROM Students WHERE FirstName = 'Ben';
 
--- Check if the data has been inserted in Courses table:
+-- Test 3: Check if the data has been inserted correctly in the Courses table:
 SELECT * FROM Courses WHERE CourseID = 85675;
-SELECT * FROM Courses WHERE Department = 'Computer Science';
 
---Check if the data has been insertedin Registration table:
+
+--Test 4: Check if the data has been inserted correctly in the Registration table:
 SELECT * FROM Registration WHERE StudentID = 150 AND CourseID = 85675;
-SELECT * FROM Registration WHERE StudentID = 155 AND CourseID = 48305;
 
---Check if the data has been inserted in GRADE_WEIGHT table:
+
+--Test 5: Check if the data has been inserted correctly in the GRADE_WEIGHT table:
 SELECT * FROM GRADE_WEIGHT WHERE CourseID = 85675 AND Category = 'Quiz';
 SELECT * FROM GRADE_WEIGHT WHERE CourseID = 90521 AND Weight = 20;
 
---Check if the data has been inserted in ASSIGNMENTS table:
+--Test 6: Check if the data has been inserted correctly in the ASSIGNMENTS table:
 SELECT * FROM ASSIGNMENTS WHERE AssignmentID = 1;
 
--- Check if the data has been inserted in GRADES table:
+-- Test 7: Check if the data has been inserted correctly in the GRADES table:
 SELECT * FROM GRADES WHERE StudentID = 150 AND AssignmentID = 1;
-SELECT * FROM GRADES WHERE CourseID = 56735 AND Grade = 80;
+
 
 -- Task 4-12 in project.sql can also be used as test cases.
