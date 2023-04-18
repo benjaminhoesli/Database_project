@@ -279,3 +279,5 @@ SELECT * FROM ASSIGNMENTS WHERE AssignmentID = 1;
 -- Check if the data has been inserted correctly in the GRADES table:
 SELECT * FROM GRADES WHERE StudentID = 150 AND AssignmentID = 1;
 SELECT * FROM GRADES WHERE CourseID = 56735 AND Grade = 80;
+
+-- Task 4-12 in project.sql can also be used as test cases.
