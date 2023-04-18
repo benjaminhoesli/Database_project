@@ -249,7 +249,7 @@ INSERT INTO GRADES VALUES(150, 28,56735, 78);
 
 -- Test Cases
 
--- Check if all the tables have been created successfully:
+-- Check if all the tables are created:
 SELECT * FROM Students;
 SELECT * FROM Courses;
 SELECT * FROM Registration;
@@ -257,26 +257,26 @@ SELECT * FROM GRADE_WEIGHT;
 SELECT * FROM ASSIGNMENTS;
 SELECT * FROM GRADES;
 
--- Check if the data has been inserted correctly in the Students table:
+-- Check if the data has been inserted in Students table:
 SELECT * FROM Students WHERE StudentID = 150;
 SELECT * FROM Students WHERE FirstName = 'Ben';
 
--- Check if the data has been inserted correctly in the Courses table:
+-- Check if the data has been inserted in Courses table:
 SELECT * FROM Courses WHERE CourseID = 85675;
 SELECT * FROM Courses WHERE Department = 'Computer Science';
 
---Check if the data has been inserted correctly in the Registration table:
+--Check if the data has been insertedin Registration table:
 SELECT * FROM Registration WHERE StudentID = 150 AND CourseID = 85675;
 SELECT * FROM Registration WHERE StudentID = 155 AND CourseID = 48305;
 
---Check if the data has been inserted correctly in the GRADE_WEIGHT table:
+--Check if the data has been inserted in GRADE_WEIGHT table:
 SELECT * FROM GRADE_WEIGHT WHERE CourseID = 85675 AND Category = 'Quiz';
 SELECT * FROM GRADE_WEIGHT WHERE CourseID = 90521 AND Weight = 20;
 
---Check if the data has been inserted correctly in the ASSIGNMENTS table:
+--Check if the data has been inserted in ASSIGNMENTS table:
 SELECT * FROM ASSIGNMENTS WHERE AssignmentID = 1;
 
--- Check if the data has been inserted correctly in the GRADES table:
+-- Check if the data has been inserted in GRADES table:
 SELECT * FROM GRADES WHERE StudentID = 150 AND AssignmentID = 1;
 SELECT * FROM GRADES WHERE CourseID = 56735 AND Grade = 80;
 
