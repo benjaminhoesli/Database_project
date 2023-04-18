@@ -41,4 +41,11 @@ You are asked to implement a grade book to keep track student grades for several
 12:Compute the grade for a student, where the lowest score for a given category is dropped.
 
 
+Test cases:
+
+The test cases in tests.sql can be commented out and then uncommented one by one in order to see the seperate outputs.
+The outputs are in the outputs folder.
+task 4-12 can also be used as test cases.
+
+
 
