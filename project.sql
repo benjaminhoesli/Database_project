@@ -305,7 +305,27 @@ WHERE StudentID IN (
  JOIN GRADE_WEIGHT ON GRADE_WEIGHT.GradeWeightID = ASSIGNMENTS.GradeWeightID
  JOIN COURSES ON COURSES.CourseID = GRADE_WEIGHT.CourseID
  WHERE GRADES.StudentID = 150 AND COURSES.CourseID = 85675;
-
  
+--Task 12
+WITH graded_assignments AS (
+  SELECT g.StudentID, gw.Category, gw.Weight, g.Grade, 
+         ROW_NUMBER() OVER (
+           PARTITION BY gw.CourseID, gw.Category 
+           ORDER BY g.Grade DESC
+         ) AS rank
+  FROM GRADES g
+  JOIN ASSIGNMENTS a ON g.AssignmentID = a.AssignmentID
+  JOIN GRADE_WEIGHT gw ON a.GradeWeightID = gw.GradeWeightID
+  WHERE g.StudentID = 150
+),
+dropped_lowest AS (
+  SELECT StudentID, Category, Weight, AVG(Grade) AS avg_grade
+  FROM graded_assignments
+  WHERE rank > 1
+  GROUP BY StudentID, Category, Weight
+)
+SELECT SUM(Weight * avg_grade) / SUM(Weight) AS overall_grade
+FROM dropped_lowest;
+
  
 
